@@ -36,19 +36,19 @@ const trainingExecutiveSchema = new mongoose.Schema(
     },
     addons: {
       platform: {
-        type: Boolean,
+        type: String,
       },
       labsandbox: {
-        type: Boolean,
+        type: String,
       },
       mentor: {
-        type: Boolean,
+        type: String,
       },
       labsupport: {
-        type: Boolean,
+        type: String,
       },
       offlinesupport: {
-        type: Boolean,
+        type: String,
       },
     },
     addonsdescription: {
@@ -58,39 +58,39 @@ const trainingExecutiveSchema = new mongoose.Schema(
 
     assessment: {
       mcq: {
-        type: Boolean,
+        type: String,
       },
       coding: {
-        type: Boolean,
+        type: String,
       },
       project: {
-        type: Boolean,
+        type: String,
       },
       casestudy: {
-        type: Boolean,
+        type: String,
       },
       proctor: {
-        type: Boolean,
+        type: String,
       },
     },
     reports: {
       dailyattendance: {
-        type: Boolean,
+        type: String,
       },
       weeklyattendance: {
-        type: Boolean,
+        type: String,
       },
       monthlyattendance: {
-        type: Boolean,
+        type: String,
       },
       weeklyperformance: {
-        type: Boolean,
+        type: String,
       },
       monthlyperformance: {
-        type: Boolean,
+        type: String,
       },
       consolidatedmonthlyreport: {
-        type: Boolean,
+        type: String,
       },
     },
   },
