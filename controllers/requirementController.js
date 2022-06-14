@@ -1,4 +1,4 @@
-const Training = require("../models/training");
+const Training = require("../models/requirement");
 
 const showAllTraining = (req, res, next) => {
   Training.find({})

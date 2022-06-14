@@ -1,5 +1,5 @@
 const express = require("express");
-const trainingController = require("../controllers/trainingController");
+const trainingController = require("../controllers/requirementController");
 const auth = require("../middleware/check-auth");
 
 const trainingRouter = express.Router();

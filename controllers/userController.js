@@ -20,6 +20,7 @@ function signup(req, res) {
               username: req.body.username,
               email: req.body.email,
               password: hash,
+              roles: req.body.roles,
             });
 
             newuser
@@ -45,7 +46,7 @@ function signup(req, res) {
 }
 
 function login(req, res) {
-  User.findOne({ email: req.body.email })
+  User.findOne({ username: req.body.username })
     .then((user) => {
       console.log(user._id);
 
@@ -61,10 +62,11 @@ function login(req, res) {
             if (result) {
               const token = jwt.sign(
                 {
-                  email: user.email,
-                  _id: user._id,
+                  name: user.name,
+                  roles: user.roles,
                 },
                 process.env.JWT_KEY,
+                { expiresIn: "5h" },
                 function (err, token) {
                   res.status(200).json({
                     message: "Authentication Successfull",

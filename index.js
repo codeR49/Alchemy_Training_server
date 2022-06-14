@@ -4,7 +4,7 @@ const cors = require("cors");
 const logger = require("morgan");
 
 const userRoutes = require("./routes/userRoutes");
-const trainingRoutes = require("./routes/trainingRoutes");
+const requirementRoutes = require("./routes/requirementRoutes");
 
 const port = process.env.PORT || 8080;
 require("./db/database")();
@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/users", userRoutes);
-app.use("/training", trainingRoutes);
+app.use("/requirement", requirementRoutes);
 
 app.listen(port, () =>
   console.log(`server is listening on url http://localhost:${port}`)
