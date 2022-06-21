@@ -1,13 +1,21 @@
 const express = require("express");
-const trainingController = require("../controllers/requirementController");
+const requirementController = require("../controllers/requirementController");
 const auth = require("../middleware/check-auth");
 
-const trainingRouter = express.Router();
-trainingRouter.use(express.json());
+const requirementRouter = express.Router();
+requirementRouter.use(express.json());
 
-trainingRouter
+requirementRouter
   .route("/")
-  .get(auth.checkAuth, trainingController.showAllTraining)
-  .post(auth.checkAuth, trainingController.createTraining);
+  .get(auth.checkAuth, requirementController.showAllRequirement)
+  .post(auth.checkAuth, requirementController.createRequirement);
 
-module.exports = trainingRouter;
+  requirementRouter.get('/reqone', auth.checkAuth, requirementController.showOneByFullname);
+
+  requirementRouter.put('/requpdate/:id', auth.checkAuth, requirementController.updateRequirement);
+
+  requirementRouter.get('/allproposal', auth.checkAuth, requirementController.getAllProposal);
+
+  requirementRouter.post('/proposal', auth.checkAuth, requirementController.createProposal);
+
+module.exports = requirementRouter;
